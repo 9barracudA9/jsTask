@@ -107,3 +107,4 @@ buttonsGroup.addEventListener('click',(event)=>{
 }
 )
 
+console.log('test')
