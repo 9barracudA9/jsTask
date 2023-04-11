@@ -107,4 +107,17 @@ buttonsGroup.addEventListener('click',(event)=>{
 }
 )
 
+let timeout;
+
+buttonsGroup.addEventListener('click',(event)=>{
+       if (event.target.closest('.btn')){
+           if(timeout !=== 'undefined'){
+                clearTimeout(timeout)
+           }
+           timeout = setTimeout(() => {
+                alert(`ID of Yegor Letov = ${event.target.id}`)
+           }, 2000)
+       }    
+}
+
 console.log('test')
