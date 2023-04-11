@@ -92,19 +92,20 @@ clearButton.addEventListener('click',(event)=> {
 
 
 const buttonsGroup=document.getElementById('idBtn')
+let timeout
 
-buttonsGroup.addEventListener('click',(event)=>{
-    if (event.target.closest('.btn')){
-        const timeout=
-        setTimeout(()=>{
-            alert(`${event.target.id}`)
-        },2000)
-        if(timeout!==undefined){
-            clearTimeout(timeout)
-        }
+        buttonsGroup.addEventListener('click',(event)=>{
+            if (event.target.closest('.btn')){
+                if(timeout !== 'undefined'){
+                    clearTimeout(timeout)
+                }
+                timeout = setTimeout(() => {
+                    alert(`Id of clicked button is :${event.target.id}`)
+                }, 2000)
+
+
 
     }
 }
 )
 
-console.log('test')
