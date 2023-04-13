@@ -109,3 +109,16 @@ let timeout
 }
 )
 
+const fetchList=document.getElementById('fetch')
+const fetchButton=document.getElementById('fbtn')
+
+fetchButton.addEventListener('click',(event)=>{
+    fetch('https://swapi.dev/api/films/2/').then(function (response){
+        response.json().then(function (json){
+            fetchList.innerHTML+=`<li>${json.title},director:${json.director} .Starships are :${json.starships[2]}}</li>`
+
+        })
+})
+})
+
+
